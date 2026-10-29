@@ -80,3 +80,66 @@ nav a.is-active { color: var(--lime); }
   .experience-meta { flex-direction:row; flex-wrap:wrap; gap:.75rem; }
   .skills-grid { grid-template-columns:1fr; }
 }
+
+
+/* Make the poetry collection easy to discover */
+.poetry-nav-link {
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+  padding:.45rem .8rem !important;
+  border:1px solid var(--lime);
+  border-radius:3px;
+  color:var(--forest) !important;
+  background:var(--lime);
+  font-weight:700 !important;
+}
+.poetry-nav-link span { font-size:1rem; line-height:1; }
+.poetry-nav-link::after { display:none; }
+.poetry-nav-link:hover { background:#d8ff91; transform:translateY(-1px); }
+.poetry-callout {
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  flex-wrap:wrap;
+  margin-top:2rem;
+  padding:1.15rem;
+  background:var(--forest);
+  border:1px solid #c6f36a;
+  box-shadow:0 10px 24px #17251c16;
+}
+.poetry-callout-mark {
+  display:grid;
+  place-items:center;
+  flex:0 0 48px;
+  height:48px;
+  border-radius:50%;
+  background:var(--lime);
+  color:var(--forest);
+  font-size:1.5rem;
+}
+.poetry-callout-copy { display:flex; flex:1 1 180px; flex-direction:column; gap:.15rem; color:white; }
+.poetry-callout-copy strong { font-family:var(--serif); font-size:1.15rem; }
+.poetry-callout-copy span { color:#c4cec1; font-size:.8rem; }
+.poetry-cta {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.7rem;
+  min-height:50px;
+  padding:.9rem 1.2rem;
+  background:var(--lime);
+  color:var(--forest);
+  border:2px solid var(--lime);
+  font-size:.82rem;
+  font-weight:800;
+  letter-spacing:.04em;
+  box-shadow:0 4px 0 #8eae45;
+}
+.poetry-cta:hover { background:#d8ff91; border-color:#d8ff91; transform:translateY(-2px); box-shadow:0 6px 0 #8eae45; }
+.poetry-cta span { font-size:1.2rem; }
+@media(max-width:760px) {
+  nav#main-navigation .poetry-nav-link { margin:.45rem 0; padding:.75rem .85rem !important; border:1px solid var(--lime); }
+  .poetry-callout { align-items:flex-start; }
+  .poetry-cta { width:100%; }
+}
