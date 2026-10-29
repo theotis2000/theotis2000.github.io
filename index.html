@@ -28,9 +28,11 @@
   </script>
 </head>
 <body>
+  <div class="scroll-progress" role="progressbar" aria-label="Page scroll progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="scroll-progress-fill"></span></div>
   <header class="topbar">
     <a class="wordmark" href="#home" aria-label="Theotis Luke Sneh home">TLS<span>.</span></a>
-    <nav aria-label="Main navigation">
+    <button class="menu-toggle" type="button" aria-controls="main-navigation" aria-expanded="false" aria-label="Open navigation"><span></span><span></span><span></span></button>
+    <nav id="main-navigation" aria-label="Main navigation">
       <a href="#about">About</a><a href="#work">Utilitay</a><a href="#education">Education</a><a href="#research">Law &amp; Research</a><a href="#contact">Contact</a>
     </nav>
   </header>
@@ -133,16 +135,19 @@
         <p>For professional, academic, and technology-related enquiries, use the contact details below.</p>
         <div class="contact-links">
           <a href="mailto:theotis2000@gmail.com">theotis2000@gmail.com ↗</a>
+          <button class="copy-email-button" type="button" data-copy="theotis2000@gmail.com">Copy email address</button>
           <a href="https://www.linkedin.com/in/theotis-sneh-ab7462237" target="_blank" rel="noopener noreferrer">LinkedIn profile ↗</a>
         </div>
         <p class="privacy-note">Only approved public professional contact details are displayed. A residential address and personal phone number from the résumé have been omitted.</p>
       </div>
     </section>
   </main>
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">↑ <span>Top</span></button>
   <footer>
     <a class="wordmark" href="#home">TLS<span>.</span></a>
     <p>© 2026 Theotis Luke Sneh · Liberia</p>
     <a href="#home">Back to top ↑</a>
   </footer>
+  <script src="script.js" defer></script>
 </body>
 </html>
