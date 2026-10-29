@@ -4,7 +4,7 @@
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
   document.documentElement.classList.add("js-ready");
 
-  const progress = $(".scroll-progress");
+  const progress = $(".scroll-progress, .reading-progress");
   const progressFill = $("#scroll-progress-fill");
   const topButton = $("#back-to-top");
   const nav = $("#main-navigation");
