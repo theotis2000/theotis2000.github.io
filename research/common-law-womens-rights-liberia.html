@@ -21,13 +21,28 @@ p { margin:0 0 1.1rem; }
 .notice { background:#f1f6e8; border-left:4px solid var(--lime); padding:1rem 1.1rem; font:.95rem/1.6 Arial,sans-serif; margin:1.5rem 0 2rem; }
 .download { display:inline-block; background:var(--lime); color:#182a1d; padding:.75rem 1rem; border-radius:5px; font:700 .95rem Arial,sans-serif; text-decoration:none; }
 footer { text-align:center; color:var(--muted); padding:1.5rem; font:.85rem/1.6 Arial,sans-serif; }
-@media print { body { background:white; } header { padding:1rem; } main { border:0; margin:0 auto; } }
+.reading-progress { position:fixed; z-index:120; inset:0 0 auto; height:3px; background:#ffffff40; }
+.reading-progress span { display:block; width:0; height:100%; background:var(--lime); }
+.article-tools { display:flex; align-items:center; flex-wrap:wrap; gap:.55rem; margin:1rem 0 1.5rem; font:600 .85rem/1.4 Arial,sans-serif; }
+.article-tools button { border:1px solid var(--line); background:#f8faf5; color:var(--forest); border-radius:4px; padding:.55rem .75rem; cursor:pointer; }
+.article-tools button:hover { border-color:var(--forest); background:#eef4e5; }
+.article-tools .tools-label { color:var(--muted); margin-right:.25rem; }
+.article-tools button:focus-visible { outline:3px solid #91b94a; outline-offset:2px; }
+@media print { body { background:white; } header { padding:1rem; } main { border:0; margin:0 auto; } .reading-progress,.article-tools,.download { display:none!important; } }
 </style>
 </head>
 <body>
+<div class="reading-progress" role="progressbar" aria-label="Article reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="scroll-progress-fill"></span></div>
 <header><div class="hero"><div class="kicker">Legal Research · Liberia</div><h1>The Impact of the Common Law Legal Tradition on the Protection, Recognition, and Advancement of Women’s Rights in Liberia</h1><div class="byline">By Theotis L. Sneh · Research essay submitted 25 June 2026</div></div></header>
-<main>
+<main id="article-content">
 <div class="notice"><strong>About this paper:</strong> This web-reading version is adapted from a law-school research essay for academic and professional portfolio purposes. The downloadable copy omits the original plagiarism declaration page and student number.</div>
+<div class="article-tools" aria-label="Reading tools">
+  <span class="tools-label">Text size</span>
+  <button type="button" id="article-font-smaller" aria-label="Decrease text size">A−</button>
+  <button type="button" id="article-font-larger" aria-label="Increase text size">A+</button>
+  <button type="button" id="copy-article-link">Copy article link</button>
+  <button type="button" id="share-article">Share</button>
+</div>
 <a class="download" href="common-law-womens-rights-liberia-public-copy.pdf" download>Download the paper (PDF)</a>
 <p><strong>Abstract.</strong> This essay examines the impact of Liberia’s common law legal tradition on the protection, recognition, and advancement of women’s rights. It considers the constitutional reception of English common law, early Supreme Court decisions concerning married women’s property and customary marriages, statutory reforms in inheritance, land rights, and gender-based violence, and the continuing gap between formal legal guarantees and lived experience.</p>
 <h2>1. Introduction</h2>
@@ -59,4 +74,5 @@ footer { text-align:center; color:var(--muted); padding:1.5rem; font:.85rem/1.6 
 <p><strong>Other sources:</strong> The submitted essay includes books, journal articles, policy reports, treaty materials, and lecture materials. Readers should consult the PDF for its full bibliography and footnotes.</p>
 <p><em>Author: Theotis L. Sneh. This webpage is a portfolio presentation of the submitted research essay; citations and legal propositions remain those of the submitted work and have not been independently verified for this publication.</em></p>
 </main><footer>© Theotis L. Sneh · Legal Research & Writing</footer>
+  <script src="../script.js" defer></script>
 </body></html>
