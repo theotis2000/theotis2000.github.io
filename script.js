@@ -144,31 +144,4 @@
       }
     });
   }
-
-  const portraitImage = $("#profile-portrait");
-  const portraitChoices = $(".portrait-choice");
-  if (portraitImage && portraitChoices.length) {
-    portraitChoices.forEach(choice => {
-      choice.addEventListener("click", () => {
-        const nextSrc = choice.getAttribute("data-src");
-        const nextAlt = choice.getAttribute("data-alt") || "Graduation portrait of Theotis Luke Sneh";
-        if (!nextSrc || portraitImage.getAttribute("src") === nextSrc) return;
-        portraitImage.classList.add("is-switching");
-        const preload = new Image();
-        preload.onload = () => {
-          portraitImage.src = nextSrc;
-          portraitImage.alt = nextAlt;
-          portraitImage.classList.remove("is-switching");
-        };
-        preload.onerror = () => portraitImage.classList.remove("is-switching");
-        preload.src = nextSrc;
-        portraitChoices.forEach(option => {
-          const active = option === choice;
-          option.classList.toggle("is-active", active);
-          option.setAttribute("aria-pressed", String(active));
-        });
-      });
-    });
-  }
-
 })();
